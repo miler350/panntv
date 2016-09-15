@@ -4,11 +4,88 @@
     <title>Pann</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
+
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="page-wrap">
+      <section class="padding_top_20px padding_bottom_50px">
+        <div class="container">
+          <div class="col-sm-12 text-center">
+            <%= image_tag("logo.png", alt: "PANNtv logo", class: "img-responsive center_image top_logo") %>
+          </div>
+        </div>
+      </section>
+
+      <%= yield %>
+
+      <section class="footer relative black_background">
+        <div class="container">
+          <div class="col-sm-12  padding_top_40px padding_bottom_40px">
+            <div class="col-sm-3 padding_top_10px">
+              <%= image_tag("footer_logo.png", alt: "PANNtv logo", class: "img-responsive center_image bottom_logo") %>
+            </div>
+
+            <div class="col-sm-6 padding_top_20px">
+              <div class="col-sm-12 no_side_padding text-center">
+                <div class="col-sm-6">
+                  <%= link_to "Privacy Policy", "#", class: "white_text" %>
+                </div>
+
+                <div class="col-sm-6">
+                  <%= link_to "Terms of Service", "#", class: "white_text" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-3 padding_top_10px">
+              <ul class="zero_margin zero_padding list-inline no_style_list pull-right footer_list">
+                <li>
+                  <%= link_to "#", class: "grey_text font_size_16px top_header_list_links" do %>
+                    <%= image_tag("icons/facebook.png", alt: "PANNtv facebook", class: "img-responsive") %>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to "#", class: "grey_text font_size_16px top_header_list_links" do %>
+                    <%= image_tag("icons/twitter.png", alt: "PANNtv twitter", class: "img-responsive") %>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to "#", class: "grey_text font_size_16px top_header_list_links" do %>
+                    <%= image_tag("icons/google.png", alt: "PANNtv google", class: "img-responsive") %>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to "#", class: "grey_text font_size_16px top_header_list_links" do %>
+                    <%= image_tag("icons/pinterest.png", alt: "PANNtv pinterest", class: "img-responsive") %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 text-center top_grey_border light_black_background padding_top_20px padding_bottom_20px white_text">
+          <div class="container">
+            Copyright © 2016 PANNtv. All rights reserved.
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </body>
 </html>

@@ -1,0 +1,823 @@
+* {
+  margin: 0;
+}
+
+body{
+  background: #f7f7f7;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400;
+}
+
+html, body{
+  height: 100%;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -192px;
+}
+
+/*.page-wrap:after {
+  content: "";
+  display: block;
+}*/
+
+.footer, .page-wrap:after {
+  height: 192px;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.promt_normal {
+  font-family: 'Prompt', sans-serif;
+  font-weight: 400;
+}
+
+.promt_semi_bold {
+  font-family: 'Prompt', sans-serif;
+  font-weight: 600;
+}
+
+.promt_bold {
+  font-family: 'Prompt', sans-serif;
+  font-weight: 800;
+}
+
+.rubik {
+  font-family: 'Rubik One', sans-serif;
+}
+
+.roboto {
+  font-family: 'Roboto Slab', serif;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.zoom {
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #299829;
+  border-color: #4cae4c;
+}
+
+.btn-light-blue {
+  color: #fff;
+  background-color: #26A9D0;
+  border-color: #26A9D0;
+}
+
+.btn-blue {
+  color: #fff;
+  background-color: #1d65a2;
+  border-color: #2e6da4;
+}
+
+.btn-red {
+  color: #fff;
+  background-color: #af0000;
+  border-color: #580101;
+}
+
+.btn-yellow {
+  color: #fff;
+  background-color: #e68a17;
+  border-color: #dc8b26;
+}
+
+.btn-green:hover, .btn-green:focus {
+  color: #fff;
+  background-color: #44a944;
+  border-color: #4cae4c;
+  outline: none;
+}
+
+.btn-light-blue:hover, .btn-light-blue:focus {
+  color: #fff;
+  background-color: #1996bb;
+  border-color: #26A9D0;
+  outline: none;
+}
+
+.btn-blue:hover, .btn-blue:focus {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  outline: none;
+}
+
+.btn-red:hover, .btn-red:focus {
+  color: #fff;
+  background-color: #d70000;
+  border-color: #580101;
+  outline: none;
+}
+
+.btn-yellow:hover, .btn-yellow:focus {
+  color: #fff;
+  background-color: #e49809;
+  border-color: #dc881e;
+  outline: none;
+}
+
+hr {
+  border: none;
+  color: #af0000;
+  background-color: #af0000;
+  height: 2px;
+  width: 120px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+
+  -moz-transition: background-color .2s ease;
+  -o-transition: background-color .2s ease;
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+}
+
+.hr_yellow {
+  color: #f0e04d;
+  background: #f0e04d;
+}
+
+.hr_salmon {
+  color: #FB5C5C;
+  background: #FB5C5C;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.top_shadow {
+  -webkit-box-shadow: 0px -10px 17px -5px rgba(185,185,185,0.75);
+  -moz-box-shadow: 0px -10px 17px -5px rgba(185,185,185,0.75);
+  box-shadow: 0px -10px 17px -5px rgba(185,185,185,0.75);
+}
+
+.bottom_shadow {
+  -webkit-box-shadow: 0px 5px 27px -5px rgba(122,122,122,0.75);
+  -moz-box-shadow: 0px 5px 27px -5px rgba(122,122,122,0.75);
+  box-shadow: 0px 5px 27px -5px rgba(122,122,122,0.75);
+}
+
+.btn {
+  transition: all 0.6s ease 0s;
+}
+
+.table_container {
+  display: table;
+}
+
+.table_cell {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+
+.heading {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bolder {
+  font-weight: 500;
+}
+
+.black_text {
+  color: #333;
+}
+
+.red_text {
+  color: #af0000;
+}
+
+.green_text {
+  color: #11AF11;
+}
+
+.salmon_text {
+  color: #FB5C5C;
+}
+
+.white_text {
+  color: #fff;
+}
+
+.grey_text {
+  color: #E0E0E0;
+}
+
+.dark_grey_text {
+  color: #909090;
+}
+
+.yellow_text {
+  color: #ffbc00;
+}
+
+.font_weight_500 {
+  font-weight: 500;
+}
+
+.font_size_12px {
+  font-size: 12px;
+}
+
+.font_size_13px {
+  font-size: 13px;
+}
+
+.font_size_14px {
+  font-size: 14px;
+}
+
+.font_size_15px {
+  font-size: 15px;
+}
+
+.font_size_16px {
+  font-size: 16px;
+}
+
+.font_size_17px {
+  font-size: 17px;
+}
+
+.font_size_18px {
+  font-size: 18px;
+}
+
+.font_size_20px {
+  font-size: 20px;
+}
+
+.font_size_22px {
+  font-size: 22px;
+}
+
+.font_size_24px {
+  font-size: 24px;
+}
+
+.font_size_26px {
+  font-size: 26px;
+}
+
+.font_size_32px {
+  font-size: 32px;
+}
+
+.font_size_36px {
+  font-size: 36px;
+}
+
+.font_size_40px {
+  font-size: 40px;
+}
+
+.font_size_50px {
+  font-size: 50px;
+}
+
+.font_size_55px {
+  font-size: 55px;
+}
+
+.font_size_60px {
+  font-size: 60px;
+}
+
+.font_size_70px {
+  font-size: 70px;
+}
+
+.font_size_100px {
+  font-size: 100px;
+}
+
+.font_size_120px {
+  font-size: 120px;
+}
+
+.line_height_20px {
+  line-height: 20px;
+}
+
+.line_height_40px {
+  line-height: 40px;
+}
+
+.line_height_70px {
+  line-height: 70px;
+}
+
+.no_top_bottom_padding {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.no_side_padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.no_left_padding {
+  padding-left: 0px;
+}
+
+.no_right_padding {
+  padding-right: 0px;
+}
+
+.padding_top_0px {
+  padding-top: 0px !important;
+}
+
+.padding_top_5px {
+  padding-top: 5px !important;
+}
+
+.padding_top_10px {
+  padding-top: 10px !important;
+}
+
+.padding_top_15px {
+  padding-top: 15px !important;
+}
+
+.padding_top_20px {
+  padding-top: 20px !important;
+}
+
+.padding_top_25px {
+  padding-top: 25px !important;
+}
+
+.padding_top_30px {
+  padding-top: 30px !important;
+}
+
+.padding_top_35px {
+  padding-top: 35px !important;
+}
+
+.padding_top_40px {
+  padding-top: 40px !important;
+}
+
+.padding_top_45px {
+  padding-top: 45px !important;
+}
+
+.padding_top_50px {
+  padding-top: 50px !important;
+}
+
+.padding_top_60px {
+  padding-top: 60px !important;
+}
+
+.padding_top_70px {
+  padding-top: 70px !important;
+}
+
+.padding_top_80px {
+  padding-top: 80px !important;
+}
+
+.padding_top_90px {
+  padding-top: 90px !important;
+}
+
+.padding_top_100px {
+  padding-top: 100px !important;
+}
+
+.padding_top_110px {
+  padding-top: 110px !important;
+}
+
+.padding_top_120px {
+  padding-top: 120px !important;
+}
+
+.padding_top_130px {
+  padding-top: 130px !important;
+}
+
+.padding_top_140px {
+  padding-top: 140px !important;
+}
+
+.padding_top_150px {
+  padding-top: 150px !important;
+}
+
+.padding_bottom_0px {
+  padding-bottom: 0px !important;
+}
+
+.padding_bottom_5px {
+  padding-bottom: 5px !important;
+}
+
+.padding_bottom_10px {
+  padding-bottom: 10px !important;
+}
+
+.padding_bottom_15px {
+  padding-bottom: 15px !important;
+}
+
+.padding_bottom_20px {
+  padding-bottom: 20px !important;
+}
+
+.padding_bottom_25px {
+  padding-bottom: 25px !important;
+}
+
+.padding_bottom_30px {
+  padding-bottom: 30px !important;
+}
+
+.padding_bottom_40px {
+  padding-bottom: 40px !important;
+}
+
+.padding_bottom_50px {
+  padding-bottom: 50px !important;
+}
+
+.padding_bottom_60px {
+  padding-bottom: 60px !important;
+}
+
+.padding_bottom_70px {
+  padding-bottom: 70px !important;
+}
+
+.padding_bottom_80px {
+  padding-bottom: 80px !important;
+}
+
+.padding_bottom_90px {
+  padding-bottom: 90px !important;
+}
+
+.padding_bottom_100px {
+  padding-bottom: 100px !important;
+}
+
+.padding_bottom_110px {
+  padding-bottom: 110px !important;
+}
+
+.padding_bottom_120px {
+  padding-bottom: 120px !important;
+}
+
+.padding_bottom_130px {
+  padding-bottom: 130px !important;
+}
+
+.padding_bottom_140px {
+  padding-bottom: 140px !important;
+}
+
+.padding_bottom_150px {
+  padding-bottom: 150px !important;
+}
+
+.padding_bottom_200px {
+  padding-bottom: 200px !important;
+}
+
+.padding_left_right_0px {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.padding_left_right_5px {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.padding_left_right_10px {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.padding_left_right_15px {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.padding_left_right_20px {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.padding_left_right_25px {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.padding_left_right_30px {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.padding_left_right_40px {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.padding_left_right_45px {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.padding_left_right_50px {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.padding_left_right_150px {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.padding_left_0px {
+  padding-left: 0px !important;
+}
+
+.padding_left_5px {
+  padding-left: 5px !important;
+}
+
+.padding_left_15px {
+  padding-left: 15px !important;
+}
+
+.padding_right_0px {
+  padding-right: 0px !important;
+}
+
+.padding_right_5px {
+  padding-right: 5px !important;
+}
+
+.padding_right_15px {
+  padding-right: 15px !important;
+}
+
+.padding_right_150px {
+  padding-right: 150px !important;
+}
+
+.zero_margin {
+  margin: 0 !important;
+}
+
+.zero_padding {
+  padding: 0 !important;
+}
+
+.margin_top_0px {
+  margin-top: 0px;
+}
+
+.margin_top_5px {
+  margin-top: 5px;
+}
+
+.margin_top_10px {
+  margin-top: 10px;
+}
+
+.margin_top_20px {
+  margin-top: 20px;
+}
+
+.margin_top_25px {
+  margin-top: 25px;
+}
+
+.margin_top_30px {
+  margin-top: 30px;
+}
+
+.margin_top_40px {
+  margin-top: 40px;
+}
+
+.margin_top_50px {
+  margin-top: 50px;
+}
+
+.margin_top_100px {
+  margin-top: 100px;
+}
+
+.margin_bottom_0px {
+  margin-bottom: 0px !important;
+}
+
+.margin_bottom_20px {
+  margin-bottom: 20px;
+}
+
+.margin_bottom_30px {
+  margin-bottom: 30px;
+}
+
+.margin_left_5px {
+  margin-left: 5px;
+}
+
+.margin_left_10px {
+  margin-left: 10px;
+}
+
+.margin_right_5px {
+  margin-right: 5px;
+}
+
+.margin_right_10px {
+  margin-right: 10px;
+}
+
+.margin_left_20px {
+  margin-left: 20px;
+}
+
+.margin_right_20px {
+  margin-right: 20px;
+}
+
+.center_image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.relative {
+  position: relative;
+}
+
+.grey_text {
+  color: #9a9a9a !important;
+}
+
+.red_text {
+  color: #f80009 !important;
+}
+
+.grey_background {
+  background: #e2e2e2 !important;
+}
+
+.black_background {
+  background: #101010;
+}
+
+.light_black_background {
+  background: #121212;
+}
+
+.top_grey_border {
+  border-top: 1px solid #4e4e4e;
+}
+
+.no_style_list {
+  list-style: none;
+}
+
+.top_logo {
+}
+
+.bottom_logo {
+}
+
+.top_video_image {
+  height: 500px;
+  -webkit-box-shadow: 0px 10px 52px -2px rgba(0,0,0,0.49);
+  -moz-box-shadow: 0px 10px 52px -2px rgba(0,0,0,0.49);
+  box-shadow: 0px 10px 52px -2px rgba(0,0,0,0.49);
+}
+
+.email_address_input {
+  padding: 18px;
+  width: 500px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  height: 60px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-left: 45px;
+  background: url('letter.png') 15px 50% no-repeat;
+  background-color: #fff;
+}
+
+.email_address_submit {
+  font-size: 16px;
+  padding: 20px 30px;
+  background: #04973e;
+  border-radius: 4px;
+  border: none;
+  height: 60px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  top: 0;
+  right: 0;
+}
+
+.email_address_input:focus, .email_address_submit:focus {
+  outline: none;
+}
+
+.what_about_list {
+  max-width: 415px;
+}
+
+.what_about_progress {
+  height: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 50px;
+}
+
+.what_about_input {
+  width: 285px;
+  margin-left: 10px;
+  padding: 10px 10px 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.what_about_input:focus {
+  outline: none;
+}
+
+.bullet {
+  padding-left: 30px;
+  background: url('bullet.png') 15px 50% no-repeat;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+}
+
+.bullet:hover {
+  padding-left: 30px;
+  background: url('bullet_selected.png') 15px 50% no-repeat;
+  background-color: #04973e;
+  color: #fff;
+}
+
+.what_about_next {
+  padding-left: 280px;
+}
+
+.what_about_prev {
+  padding-right: 250px;
+}

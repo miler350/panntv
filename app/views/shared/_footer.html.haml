@@ -1,0 +1,28 @@
+%section.footer.relative.black_background
+  .container
+    .col-sm-12.padding_top_40px.padding_bottom_40px
+      .col-sm-3.padding_top_10px
+        = image_tag("footer_logo.png", alt: "PANNtv logo", class: "img-responsive center_image bottom_logo")
+      .col-sm-6.padding_top_20px
+        .col-sm-12.no_side_padding.text-center
+          .col-sm-6
+            = link_to "Privacy Policy", "#", class: "white_text"
+          .col-sm-6
+            = link_to "Terms of Service", "#", class: "white_text"
+      .col-sm-3.padding_top_10px
+        %ul.zero_margin.zero_padding.list-inline.no_style_list.pull-right.footer_list
+          %li
+            = link_to "#", class: "grey_text font_size_16px top_header_list_links" do
+              = image_tag("icons/facebook.png", alt: "PANNtv facebook", class: "img-responsive")
+          %li
+            = link_to "#", class: "grey_text font_size_16px top_header_list_links" do
+              = image_tag("icons/twitter.png", alt: "PANNtv twitter", class: "img-responsive")
+          %li
+            = link_to "#", class: "grey_text font_size_16px top_header_list_links" do
+              = image_tag("icons/google.png", alt: "PANNtv google", class: "img-responsive")
+          %li
+            = link_to "#", class: "grey_text font_size_16px top_header_list_links" do
+              = image_tag("icons/pinterest.png", alt: "PANNtv pinterest", class: "img-responsive")
+  .col-sm-12.text-center.top_grey_border.light_black_background.padding_top_20px.padding_bottom_20px.white_text
+    .container
+      Copyright © 2016 PANNtv. All rights reserved.

@@ -1,0 +1,58 @@
+%section.padding_top_20px.padding_bottom_70px
+  .container
+    .col-sm-12.font_size_26px.red_text.text-center.poppins
+      Watch Howard University
+      %br/
+      Homecoming Live!!
+    .col-sm-12.top_video.padding_top_20px
+      = image_tag("top_video_image.png", alt: "PANNtv logo", class: "img-responsive center_image top_video_image")
+%section.padding_top_50px.padding_bottom_50px.grey_background
+  .container
+    .col-sm-12.font_size_26px.red_text.uppercase.text-center.poppins
+      About us
+    .col-sm-12.padding_top_20px.text-center.font_size_16px
+      PANNtv is a trusted platform that will aggregate and broadcast local, national and international news, current events, sporting events, festivals and other entertainment that are pipular in Black communities but not covered by mainstream media.
+%section.padding_top_50px.padding_bottom_50px
+  .container
+    .col-sm-12.font_size_26px.red_text.uppercase.text-center.poppins
+      What about you
+    .col-sm-12.text-center.padding_top_30px
+      Question 3/15
+    .col-sm-4.col-sm-offset-4.text-center.padding_top_15px
+      .progress.what_about_progress
+        .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%;"}
+    .col-sm-12.text-center.bold.font_size_22px
+      How did you feel when you first visited
+      %br/
+      this site?
+    .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+      %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+        %li.bullet.margin_top_10px
+          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+            Intrigued by PANNtv's content
+        %li.bullet.margin_top_10px
+          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+            Curious about PANNtv's future coverage
+        %li.bullet.margin_top_10px
+          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+            Relieved that there's a Black news network
+        %li.bullet.margin_top_10px
+          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+            Other:
+            %input.what_about_input{:name => "name", :placeholder => "Typing", :type => "text", :value => ""}/
+    .col-sm-12.padding_top_50px
+      .col-sm-6.text-right.what_about_prev.font_size_12px.grey_text
+        %i.fa.fa-long-arrow-left.margin_right_10px{"aria-hidden" => "true"}
+        PREV
+      .col-sm-6.text-left.what_about_next.font_size_12px.grey_text
+        NEXT
+        %i.fa.fa-long-arrow-right.margin_left_10px{"aria-hidden" => "true"}
+%section.padding_top_50px.padding_bottom_50px.grey_background
+  .container
+    .col-sm-12.font_size_20px.text-center
+      Enter Your Email to Learn More About Panntv and Our Future Coverage
+    .col-sm-12.padding_top_40px.text-center
+      .btn-group
+        = simple_form_for @subscriber, remote: true do |f|
+          = f.input :email, placeholder: 'E-mail address', input_html: { class: 'email_address_input' }
+          = f.button :submit, value: 'Join now', class: 'absolute email_address_submit white_text'

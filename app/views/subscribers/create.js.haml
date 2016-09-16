@@ -1,0 +1,7 @@
+- if @subscriber.errors.any?
+  :plain
+    $.notify({ message: "#{@subscriber.errors.full_messages.join(', ')}" }, { type: 'danger' });
+- else
+  :plain
+    $.notify({ message: "<strong>Thank you for subscribing!</strong>" }, { type: 'success' });
+    $('#subscriber_email').val('');

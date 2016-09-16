@@ -54,5 +54,5 @@
     .col-sm-12.padding_top_40px.text-center
       .btn-group
         = simple_form_for @subscriber, remote: true do |f|
-          = f.input :email, placeholder: 'E-mail address', input_html: { class: 'email_address_input' }
+          = f.input :email, placeholder: 'E-mail address', input_html: { class: 'email_address_input' }, label: false
           = f.button :submit, value: 'Join now', class: 'absolute email_address_submit white_text'

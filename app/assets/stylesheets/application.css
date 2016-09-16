@@ -13,6 +13,7 @@
  *= require font-awesome.min
  *= require font-poppins
  *= require bootstrap.min
+ *= require toastr.min
  *= require style
  *= require_self
  */

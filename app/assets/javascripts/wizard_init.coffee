@@ -1,5 +1,5 @@
 class Wizzard
-  constructor: (el) ->
+  constructor: (el)->
     @wizard = $(el)
     @initSteps()
     @showOnlyFirstStep()
@@ -21,20 +21,20 @@ class Wizzard
     @steps.filter(':not(:first)').hide()
 
   moveNext: ->
-    if @stepValid()
-      @currentStep().hide()
-      @nextStep().show()
-      @stepIndex = @stepIndex + 1
+    #if @stepValid()
+    @currentStep().hide()
+    @nextStep().show()
+    @stepIndex = @stepIndex + 1
 
   moveBack: ->
-    if @stepValid()
-      @currentStep().hide()
-      @prevStep().show()
-      @stepIndex = @stepIndex - 1
+    #if @stepValid()
+    @currentStep().hide()
+    @prevStep().show()
+    @stepIndex = @stepIndex - 1
 
-  stepValid: ->
-    @currentStep().validator('validate')
-    @currentStep().find('.has-error').length is 0
+  #stepValid: ->
+    #@currentStep().validator('validate')
+    #@currentStep().find('.has-error').length is 0
 
   currentStep: ->
     $(@steps[@stepIndex])
@@ -72,7 +72,17 @@ class Wizzard
 
 
 $(document).ready ->
-  new Wizzard('.login_form_container')
+  new Wizzard('.form_container')
+
+  $('#first_visited_input').hide()
+  $('#did_you_hear_input').hide()
+
+  $('#survey_result_first_visited_other').click ->
+   $('#first_visited_input').show() 
+
+  $('#survey_result_did_you_hear_other').click ->
+    $('#did_you_hear_input').show()
+      
 
 #$(document).ready ->
 #  form = $('#example-form-old')

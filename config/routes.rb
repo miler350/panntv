@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'main#index'
   resources :subscribers
+  resources :survey_results, only: :create
 end

@@ -801,7 +801,7 @@ hr {
 
 .bullet {
   padding-left: 30px;
-  background: url('bullet.png') 15px 50% no-repeat;
+  // background: url('bullet.png') 15px 50% no-repeat;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.2s ease 0s;
@@ -809,7 +809,7 @@ hr {
 
 .bullet:hover {
   padding-left: 30px;
-  background: url('bullet_selected.png') 15px 50% no-repeat;
+  // background: url('bullet_selected.png') 15px 50% no-repeat;
   background-color: #04973e;
   color: #fff;
 }

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
-//= require bootstrap-notify
+//= require toastr.min
 //= require notify
+//= require wizard_init
 //= require_tree .

@@ -1,53 +1,24 @@
-window.notifySuccess=(message) ->
-  $.notify {
-      icon: 'glyphicon glyphicon glyphicon-ok'
-      message: message
-    },
-    type: 'success'
-    offset:
-      x: 20
-      y: 120
-    placement:
-      from: 'top'
-      align: 'right'
-    delay: 10000
-    mouse_over: 'pause'
-
-window.notifyError=(message) ->
-  $.notify {
-      icon: 'glyphicon glyphicon glyphicon-remove'
-      message: message
-    },
-    type: 'danger'
-    offset:
-      x: 20
-      y: 120
-    placement:
-      from: 'top'
-      align: 'right'
-    delay: 10000
-    mouse_over: 'pause'
-
-window.notifyNotice=(message) ->
-  $.notify {
-      icon: 'glyphicon glyphicon glyphicon-ok'
-      message: message
-    },
-    type: 'info'
-    offset:
-      x: 20
-      y: 120
-    placement:
-      from: 'top'
-      align: 'right'
-    delay: 10000
-    mouse_over: 'pause'
-
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "progressBar": true,
+  "preventDuplicates": false,
+  "positionClass": "toast-top-right",
+  "onclick": null,
+  "showDuration": "400",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
 
 $(document).ready ->
   if $('.success').length
-    notifySuccess($('.success').data('message'))
+    toastr.success($('.success').data('message'))
   if $('.notice').length
-    notifyNotice($('.notice').data('message'))
+    toastr.info($('.notice').data('message'))
   if $('.errors').length
-    notifyError($('.errors').data('message'))
+    toastr.error($('.errors').data('message'))

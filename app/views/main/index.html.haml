@@ -13,40 +13,364 @@
     .col-sm-12.padding_top_20px.text-center.font_size_16px
       PANNtv is a trusted platform that will aggregate and broadcast local, national and international news, current events, sporting events, festivals and other entertainment that are pipular in Black communities but not covered by mainstream media.
 %section.padding_top_50px.padding_bottom_50px
-  .container
-    .col-sm-12.font_size_26px.red_text.uppercase.text-center.poppins
-      What about you
-    .col-sm-12.text-center.padding_top_30px
-      Question 3/15
-    .col-sm-4.col-sm-offset-4.text-center.padding_top_15px
-      .progress.what_about_progress
-        .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%;"}
-    .col-sm-12.text-center.bold.font_size_22px
-      How did you feel when you first visited
-      %br/
-      this site?
-    .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
-      %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
-        %li.bullet.margin_top_10px
-          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
-            Intrigued by PANNtv's content
-        %li.bullet.margin_top_10px
-          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
-            Curious about PANNtv's future coverage
-        %li.bullet.margin_top_10px
-          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
-            Relieved that there's a Black news network
-        %li.bullet.margin_top_10px
-          .padding_top_10px.padding_bottom_10px.padding_left_right_15px
-            Other:
-            %input.what_about_input{:name => "name", :placeholder => "Typing", :type => "text", :value => ""}/
-    .col-sm-12.padding_top_50px
-      .col-sm-6.text-right.what_about_prev.font_size_12px.grey_text
-        %i.fa.fa-long-arrow-left.margin_right_10px{"aria-hidden" => "true"}
-        PREV
-      .col-sm-6.text-left.what_about_next.font_size_12px.grey_text
-        NEXT
-        %i.fa.fa-long-arrow-right.margin_left_10px{"aria-hidden" => "true"}
+  .container.form_container
+    = form_for @survey do |f|
+      .col-sm-12.font_size_26px.red_text.uppercase.text-center.poppins
+        What about you
+      .col-sm-12.text-center.padding_top_30px
+        Question 3/15
+      .col-sm-4.col-sm-offset-4.text-center.padding_top_15px
+        .progress.what_about_progress
+          .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%;"}
+
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Gender
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :gender, 'Male'
+                Male
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :gender, 'Female'
+                Female
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Age
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :age, 'Under 16'
+                Under 16
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :age, '16 to 22'
+                16 to 22
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :age, '23 to 30'
+                23 to 30
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :age, '30 to 40'
+                30 to 40
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :age, 'Over 40'
+                Over 40
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Income
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :income, '$0 to 35.000'
+                $0 to 35.000
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :income, '$35.001 to 70.000'
+                $35.001 to 70.000
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :income, '$70.001 or more'
+                $70.001 or more
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Where did you watch PANNtv
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_watch, 'Facebook'
+                Facebook
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_watch, 'PANNtv.com'
+                PANNtv.com
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative  
+        .col-sm-12.text-center.bold.font_size_22px
+          Are you Black/Pan-African?
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :are_you_black, true
+                Yes
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :are_you_black, false
+                No
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          List some of your favorite programs that you're currently watching
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.text_field :favorite_programs, placeholder: "Typing", class: 'what_about_input'
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.text_field :favorite_programs_1, placeholder: "Typing", class: 'what_about_input'
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.text_field :favorite_programs_2, placeholder: "Typing", class: 'what_about_input'
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          How did you feel when you first visited this site?
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :first_visited, "Intrigued by PANNtv's content"
+                Intrigued by PANNtv's content
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :first_visited, "Curious about PANNtv's future coverage"
+                Curious about PANNtv's future coverage
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :first_visited, "Relieved that there's a Black news network"
+                Relieved that there's a Black news network
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :first_visited, 'Other'
+                Other:
+                = f.text_field :first_visited_other, id: 'first_visited_input', placeholder: "Typing", class: 'what_about_input'
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Would you watch a news network dedicated to the Black diaspora?
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :news_network, true
+                Yes
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :news_network, false
+                No
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+
+      %section.card.relative          
+        .col-sm-12.text-center.bold.font_size_22px
+          Location
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'USA'
+                USA
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'Africa'
+                Africa
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'North America'
+                North America
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'Caribbean'
+                Caribbean
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'South America'
+                South America
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'Europe'
+                Europe
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'Asia'
+                Asia
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :location, 'Australia'
+                Australia
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Suggest events that are special to the Black community in your
+          %br
+          area that receive very little media attention
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.text_field :suggest_events, placeholder: "Typing", class: 'what_about_input'
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          What Black programs, events, news, etc.
+          %br
+          would you like us to cover
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :to_cover, 'Electron coverage for the Black audience'
+                Electron coverage for the Black audience
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :to_cover, 'Black health and beauty'
+                Black health and beauty
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :to_cover, 'Fashion'
+                Fashion
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :to_cover, 'Black sports andentertainment'
+                Black sports andentertainment
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          What do you mostly use to watch programs
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :mostly_use, 'On my television'
+                On my television
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :mostly_use, 'My phone, tablet or laptop'
+                My phone, tablet or laptop
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          How did you hear about PANNtv
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_hear, 'Facebook'
+                Facebook
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_hear, 'Instagram'
+                Instagram
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_hear, 'Twitter'
+                Twitter
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_hear, 'YouTube'
+                YouTube
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_hear, 'Frians/Family'
+                Frians/Family
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_hear, 'News Article or Story'
+                News Article or Story
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.radio_button :did_you_hear, 'Other'
+                Other:
+                = f.text_field :did_you_hear_other, id: 'did_you_hear_input', placeholder: "Typing", class: 'what_about_input'
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          What events would you like to see PANNtv cover?
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.text_field :like_to_see, placeholder: "Typing", class: 'what_about_input'
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Name the top things you liked about PANNtv.com
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.text_field :things_like, placeholder: "Typing", class: 'what_about_input'
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          = render 'shared/next_button_active'
+      
+      %section.card.relative
+        .col-sm-12.text-center.bold.font_size_22px
+          Name the top things you disliked about PANNtv.com
+        .col-sm-5.col-sm-offset-4.padding_top_20px.no_side_padding
+          %ul.zero_margin.zero_padding.no_style_list.font_size_18px.what_about_list
+            %li.bullet.margin_top_10px
+              .padding_top_10px.padding_bottom_10px.padding_left_right_15px
+                = f.text_field :things_dislike, placeholder: "Typing", class: 'what_about_input'
+        .col-sm-12.padding_top_50px
+          = render 'shared/prev_button_active'
+          .col-sm-6.text-left.what_about_next.font_size_12px.grey_text
+            = f.submit 'Finish', class: 'btn btn-success'
+
+
 %section.padding_top_50px.padding_bottom_50px.grey_background
   .container
     .col-sm-12.font_size_20px.text-center

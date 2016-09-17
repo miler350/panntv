@@ -5,8 +5,10 @@ class Wizzard
     @showOnlyFirstStep()
     @initNextStep()
     @initPrevStep()
-    @initDynamicElements()
+    #@initDynamicElements()
     @stepIndex = 0
+    @step = 1
+    @showSteps(@step)
 
   initSteps: ->
     @steps = @wizard.find('section')
@@ -25,12 +27,16 @@ class Wizzard
     @currentStep().hide()
     @nextStep().show()
     @stepIndex = @stepIndex + 1
+    @step += 1
+    @showSteps(@step)
 
   moveBack: ->
     #if @stepValid()
     @currentStep().hide()
     @prevStep().show()
     @stepIndex = @stepIndex - 1
+    @step -= 1
+    @showSteps(@step)
 
   #stepValid: ->
     #@currentStep().validator('validate')
@@ -45,30 +51,36 @@ class Wizzard
   prevStep: ->
     $(@steps[@stepIndex - 1])
 
-  initDynamicElements: ->
-    $('#user_profile_attributes_role').change ->
-      if $(@).val() == 'Other'
-        $('#user_profile_attributes_other_role').show()
-        $('#user_profile_attributes_other_role').attr('required', true)
-      else
-        $('#user_profile_attributes_other_role').hide()
-        $('#user_profile_attributes_other_role').removeAttr('required')
+  showSteps: (step) ->
+    document.getElementById('show_steps').innerHTML = "<div id='show_steps'>Question #{ step }/16</div>"
+    $('.progress-bar').filter(->
+      $(this).css 'width'
+    ).css 'width', "#{ step }" * 22
 
-    $('#user_profile_attributes_health_experience').change ->
-      if $(@).is(":checked")
-        $('#user_profile_attributes_health_experience_description').show()
-        $('#user_profile_attributes_health_experience_description').attr('required', true)
-      else
-        $('#user_profile_attributes_health_experience_description').hide()
-        $('#user_profile_attributes_health_experience_description').removeAttr('required')
-
-    $('#user_profile_attributes_stroke_experience').change ->
-      if $(@).is(":checked")
-        $('#user_profile_attributes_stroke_experience_description').show()
-        $('#user_profile_attributes_stroke_experience_description').attr('required', true)
-      else
-        $('#user_profile_attributes_stroke_experience_description').hide()
-        $('#user_profile_attributes_stroke_experience_description').removeAttr('required')
+#  initDynamicElements: ->
+#    $('#user_profile_attributes_role').change ->
+#      if $(@).val() == 'Other'
+#        $('#user_profile_attributes_other_role').show()
+#        $('#user_profile_attributes_other_role').attr('required', true)
+#      else
+#        $('#user_profile_attributes_other_role').hide()
+#        $('#user_profile_attributes_other_role').removeAttr('required')
+#
+#    $('#user_profile_attributes_health_experience').change ->
+#      if $(@).is(":checked")
+#        $('#user_profile_attributes_health_experience_description').show()
+#        $('#user_profile_attributes_health_experience_description').attr('required', true)
+#      else
+#        $('#user_profile_attributes_health_experience_description').hide()
+#        $('#user_profile_attributes_health_experience_description').removeAttr('required')
+#
+#    $('#user_profile_attributes_stroke_experience').change ->
+#      if $(@).is(":checked")
+#        $('#user_profile_attributes_stroke_experience_description').show()
+#        $('#user_profile_attributes_stroke_experience_description').attr('required', true)
+#      else
+#        $('#user_profile_attributes_stroke_experience_description').hide()
+#        $('#user_profile_attributes_stroke_experience_description').removeAttr('required')
 
 
 $(document).ready ->
